@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Noah Châtelain - Client Riche</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.8/css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- DEBUT DU PROJET-->
+
+
+
+    <!--Navbar-->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark elegant-color">
+
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="#">Client Riche</a>
+
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Accueil
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+
+            </ul>
+            <!-- Links -->
+
+            <a class="form-inline btn btn-elegant" data-toggle="modal" data-target="#modalAddArticle">Ajouter un
+                article</a>
+
+
+        </div>
+        <!-- Collapsible content -->
+
+    </nav>
+    <!--/.Navbar-->
+
+
+    <div class="container" style="margin-top:120px">
+        <div class="row">
+            <div class="col-md-12 mb-5">
+                <h1>Articles</h1>
+
+                <!-- Material input -->
+                <div class="md-form">
+                    <input type="text" id="search" class="form-control">
+                    <label for="search">Rechercher</label>
+                </div>
+
+                <div class="loader mt-5">
+                    <div class="spinner-grow text-primary" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    <div class="spinner-grow text-secondary" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    <div class="spinner-grow text-success" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    <div class="spinner-grow text-danger" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    <div class="spinner-grow text-warning" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    <div class="spinner-grow text-info" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+
+                <div class="titles mt-5">
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <div class="modal fade" id="modalArticleUpdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Modifier l'article</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+                    <div class="md-form mb-5">
+                        <i class="fas fa-heading prefix grey-text"></i>
+                        <input type="text" id="editTitle" class="form-control validate" value="test">
+                        <label data-error="wrong" data-success="right" for="editTitle">Titre de
+                            l'article</label>
+                    </div>
+
+                    <div class="md-form">
+                        <i class="fas fa-newspaper prefix grey-text"></i>
+                        <textarea id="editContent" class="md-textarea form-control" rows="3"></textarea>
+                        <label for="editContent">Contenu de l'article</label>
+                    </div>
+
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button id="updateArticle" class="btn btn-default">Modifier cet article</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="modalAddArticle" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Ajouter un article</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+                    <div class="md-form mb-5">
+                        <i class="fas fa-heading prefix grey-text"></i>
+                        <input type="text" class="form-control validate" id="addTitle">
+                        <label data-error="wrong" data-success="right" for="addTitle">Titre de
+                            l'article</label>
+                    </div>
+
+                    <div class="md-form">
+                        <i class="fas fa-newspaper prefix grey-text"></i>
+                        <textarea class="md-textarea form-control" id="addContent" rows="3"></textarea>
+                        <label for="addContent">Contenu de l'article</label>
+                    </div>
+
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button class="btn btn-default" id="addArticle">Ajouter</button>
+                </div>
+
+                <center>
+                    <div id="loaderModal" class="loader mt-1">
+                        <div class="spinner-grow text-primary" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-secondary" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-success" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-danger" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-warning" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-info" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                </center>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- /FIN DU PROJET-->
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.8/js/mdb.js"></script>
+    <script src="js/script.js"></script>
+
+
+    <!-- SCRIPTS -->
+</body>
+
+</html>
